@@ -1,0 +1,21 @@
+Step - 1 
+Run the below command after setting jdk 8 or above on system for windows run each command seperately and for linux and mac single command works.
+
+java -jar eureka-server.jar &
+java -jar zuul-server.jar &
+java -jar service1.jar &
+java -jar service2.jar &
+java -jar zipkin.jar
+
+Step - 2
+
+Execute an api of service 1 via zuul server by hitting below url in browser -
+http://localhost:8765/service1/response
+
+Step - 3 
+
+Go to browser and hit below url for zipkin dashboard -
+localhost:9411
+
+
+Now distributed logs for the application can be monitored on zipkin dashboard(one can go on zipkin dash board and click on Run Query button and also see dependency graph).
